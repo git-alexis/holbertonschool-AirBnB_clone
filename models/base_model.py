@@ -11,13 +11,27 @@ class BaseModel:
 
     """BaseModel class"""
 
-    def __init__(self):
-        """Initializes BaseModel instance"""
-        self.name = ""
-        self.my_number = 0
-        self.id = str(uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+    def __init__(self, *args, **kwargs):
+        """Initializes BaseModel instance
+        Args:
+            args: set of arguments
+            kwargs: set of arguments with keywords
+        """
+        # if kwargs not empty: reconstruct instance from dictionary
+        if kwargs:
+            for key, value in kwargs.items():
+                # Convert created_at and updated_at strings to datetime objects
+                if key == "created_at" or key == "updated_at":
+                    value = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
+                if key != "__class__":
+                    setattr(self, key, value)
+            # if id not provided: generate a new one
+            if "id" not in kwargs:
+                self.id = str(uuid4())
+        else:
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """Returns string representation of BaseModel instance"""
