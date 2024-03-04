@@ -12,7 +12,7 @@ class BaseModel:
     """BaseModel class"""
 
     def __init__(self):
-        """Initializes BaseModel instance"""
+        """Initializes a BaseModel instance"""
         self.name = ""
         self.my_number = 0
         self.id = str(uuid4())
