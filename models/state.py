@@ -7,5 +7,8 @@ from models.base_model import BaseModel
 
 
 class State(BaseModel):
-    """ State class that inherit from BaseModel """
+    """ State class that inherit from BaseModel
+    Args:
+    BaseModel : inheritance
+    """
     name = str("")
