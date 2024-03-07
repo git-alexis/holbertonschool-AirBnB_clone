@@ -17,6 +17,8 @@ class BaseModel:
             args: set of arguments
             kwargs: set of arguments with keywords
         """
+        self.my_number = 0
+        self.name = ""
         # if kwargs not empty: reconstruct instance from dictionary
         if kwargs:
             for key, value in kwargs.items():
