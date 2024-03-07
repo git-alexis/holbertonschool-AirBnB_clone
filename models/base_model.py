@@ -17,8 +17,6 @@ class BaseModel:
             args: set of arguments
             kwargs: set of arguments with keywords
         """
-        self.my_number = 0
-        self.name = ""
         # if kwargs not empty: reconstruct instance from dictionary
         if kwargs:
             for key, value in kwargs.items():
@@ -51,8 +49,6 @@ class BaseModel:
     def to_dict(self):
         """Returns dictionary representation of BaseModel instance"""
         return {
-            "my_number": self.my_number,
-            "name": self.name,
             "__class__": self.__class__.__name__,
             "updated_at": self.updated_at.isoformat(),
             "id": self.id,
