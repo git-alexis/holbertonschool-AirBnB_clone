@@ -7,7 +7,7 @@ from models.base_model import BaseModel
 
 
 class City(BaseModel):
-    """ City class that inherit from BaseModel 
+    """ City class that inherit from BaseModel
     Args:
     BaseModel : inheritance
     """

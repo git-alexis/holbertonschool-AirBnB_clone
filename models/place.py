@@ -7,7 +7,7 @@ from models.base_model import BaseModel
 
 
 class Place(BaseModel):
-    """ Place class that inherit from BaseModel 
+    """ Place class that inherit from BaseModel
     Args:
     BaseModel : inheritance
     """

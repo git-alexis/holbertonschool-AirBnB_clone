@@ -7,7 +7,7 @@ from models.base_model import BaseModel
 
 
 class Review(BaseModel):
-    """ Review class that inherit from BaseModel 
+    """ Review class that inherit from BaseModel
     Args:
     BaseModel : inheritance
     """
