@@ -1,10 +1,10 @@
 # AirBnB clone - The console
 
-![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20240308%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20240308T120245Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=4121b0470eafe8e596bc364cc3db123977ea47a0f71207b94971fe375ffc5684)
+![](https://imgur.com/zOI8vgx.jpg)
 
 Welcome to the AirBnB Clone Console! This console serves as the command-line interface for managing various aspects of our AirBnB clone project.
 
-![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20240308%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20240308T120245Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=5a34a39c1db3a99095ce0ded57d612e056cf43b4f729b67b6ae3dff7b544ade2)
+![](https://imgur.com/1uHAJQI.jpg)
 
 ## Getting Started
 To get started, follow these steps:
