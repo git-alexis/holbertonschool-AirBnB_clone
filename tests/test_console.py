@@ -20,7 +20,11 @@ class TestConsole(unittest.TestCase):
             self.console.onecmd("create BaseModel")
             output = mock_stdout.getvalue().strip()
             self.assertTrue(output)
-            self.assertIn(output, storage.all())
+
+            instance_id = output
+            storage = FileStorage()
+            instance_key = "BaseModel." + instance_id
+            self.assertIn(instance_key, storage.all())
 
     def test_show(self):
         with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
@@ -55,14 +59,16 @@ class TestConsole(unittest.TestCase):
 
     def test_update(self):
         with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
-            self.console.onecmd("create BaseModel")
+            self.console.onecmd("create User")
             output = mock_stdout.getvalue().strip()
             self.assertTrue(output)
-            with patch('sys.stdout', new_callable=StringIO) as mock_stdout2:
-                self.console.onecmd(f"update BaseModel {output} last_name 'J'")
-                self.console.onecmd(f"show BaseModel {output}")
-                show_output = mock_stdout2.getvalue().strip()
-                self.assertIn("'last_name': 'J'", show_output)
+
+            self.console.onecmd(f"update User {output} last_name 'John'")
+            storage = FileStorage()
+            instance_id = output
+            instance_key = "User." + instance_id
+            updated_instance = storage.all()[instance_key]
+            self.assertEqual(updated_instance.last_name, "John")
 
     def test_create_syntax_error(self):
         with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
