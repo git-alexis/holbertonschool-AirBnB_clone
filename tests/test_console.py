@@ -68,7 +68,7 @@ class TestConsole(unittest.TestCase):
             instance_id = output
             instance_key = "User." + instance_id
             updated_instance = storage.all()[instance_key]
-            self.assertEqual(updated_instance.last_name, "John")
+            self.assertEqual(str(updated_instance.last_name), "John")
 
     def test_create_syntax_error(self):
         with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
@@ -153,6 +153,16 @@ class TestConsole(unittest.TestCase):
             self.console.onecmd("update BaseModel 1234 first_name")
             output = mock_stdout.getvalue().strip()
             self.assertEqual(output, "** value missing **")
+
+    def test_to_dict_contains(self):
+        """ Test to_dict contains all keys/values """
+        model = BaseModel()
+        model_dict = model.to_dict()
+        self.assertTrue(all(key in model_dict for key in
+                            ('id', 'created_at', 'updated_at', '__class__')))
+        self.assertTrue(all(str(model_dict[key]) == str(getattr(model, key))
+                            for key in ('id', 'created_at',
+                                        'updated_at', '__class__')))
 
 
 if __name__ == '__main__':
