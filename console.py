@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" Console for AirBnB"""
+
 
 import cmd
 from models.base_model import BaseModel
