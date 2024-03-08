@@ -59,10 +59,10 @@ class TestConsole(unittest.TestCase):
             output = mock_stdout.getvalue().strip()
             self.assertTrue(output)
             with patch('sys.stdout', new_callable=StringIO) as mock_stdout2:
-                self.console.onecmd(f"update BaseModel {output} last_name 'John'")
+                self.console.onecmd(f"update BaseModel {output} last_name 'J'")
                 self.console.onecmd(f"show BaseModel {output}")
                 show_output = mock_stdout2.getvalue().strip()
-                self.assertIn("'last_name': 'John'", show_output)
+                self.assertIn("'last_name': 'J'", show_output)
 
     def test_create_syntax_error(self):
         with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
